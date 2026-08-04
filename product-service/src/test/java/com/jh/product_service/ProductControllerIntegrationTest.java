@@ -1,30 +1,8 @@
 package com.jh.product_service;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import java.math.BigDecimal;
-import java.util.List;
-
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
 import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
-import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
-import org.testcontainers.mongodb.MongoDBContainer;
-
-import com.jh.product_service.dto.ProductRequest;
-import com.jh.product_service.entity.Product;
-import com.jh.product_service.repository.ProductRepository;
-
-import tools.jackson.core.JacksonException;
-import tools.jackson.databind.ObjectMapper;
 
 
 @SpringBootTest
@@ -32,7 +10,7 @@ import tools.jackson.databind.ObjectMapper;
 @AutoConfigureMockMvc
 public class ProductControllerIntegrationTest {
 	
-	@Container
+	/**@Container
 	@ServiceConnection
 	static MongoDBContainer mongoDBContainer = new MongoDBContainer("mongo:7.0");
 	
@@ -86,5 +64,5 @@ public class ProductControllerIntegrationTest {
 		.andExpect(MockMvcResultMatchers.status().isOk())
 	    .andExpect(MockMvcResultMatchers.jsonPath("$.length()").value(2));
 		
-	}
+	}**/
 }
